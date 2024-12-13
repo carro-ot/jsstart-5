@@ -13,19 +13,28 @@
 	<h1>Фильтрация и сортировка товаров</h1>
 
 <div class="filters">
-	<div class="category-buttons">
-		<button class="filter-btn" data-category="">Все категории</button>
-		<button class="filter-btn" data-category="Одежда">Одежда</button>
-		<button class="filter-btn" data-category="Аксессуары">Аксессуары</button>
-		<button class="filter-btn" data-category="Электроника">Электроника</button>
+	<div class="category-radio">
+		<label>
+			<input type="radio" name="category" value="" checked>
+			Все категории
+		</label>
+		<label>
+			<input type="radio" name="category" value="Одежда">
+			Одежда
+		</label>
+		<label>
+			<input type="radio" name="category" value="Аксессуары">
+			Аксессуары
+		</label>
+		<label>
+			<input type="radio" name="category" value="Электроника">
+			Электроника
+		</label>
 	</div>
- 	<button id="sortAsc">Сортировать по цене (возрастание)</button>
- 	<button id="sortDesc">Сортировать по цене (убывание)</button>
+
+	<button id="sortAsc">Сортировать по цене (возрастание)</button>
+	<button id="sortDesc">Сортировать по цене (убывание)</button>
 	<button id="resetFilters">Сбросить фильтры</button>
-</div>
-
-<div class="products" id="products">
-
 </div>
 
 <script src="./js/script.js"></script>
