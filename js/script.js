@@ -28,6 +28,16 @@ product.forEach(product => {
 	productList.appendChild(li);
 })
 
+const filteredproduct = product.filter(product => {
+	product.category === selectCategory && product.price < maxPrice;
+	// const filteredProducts = products.filter(product => product.price < maxPrice);
+// const filteredProducts = products.filter(product => product.price < maxPrice);
+
+});
+
+
+
+
 // const clothe = product.filter(product => product.category === 'Одежда');
 // console.log(clothe);
 
