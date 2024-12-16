@@ -28,12 +28,32 @@ product.forEach(product => {
 	productList.appendChild(li);
 })
 
-const filteredproduct = product.filter(product => {
-	product.category === selectCategory && product.price < maxPrice;
+
+const selectedCategory = document.querySelector('input[type="radio"]:checked').value;
+
+const filteredsProduct = product.filter(product => 
+	product.category === selectedCategory && product.price < maxPrice
 	// const filteredProducts = products.filter(product => product.price < maxPrice);
 // const filteredProducts = products.filter(product => product.price < maxPrice);
+);
+renderProducts(filteredsProduct);
 
+
+
+const radioButtons = document.querySelectorAll('input[type = "radio"]');
+
+radioButtons.forEach(button => {
+	button.addEventListener('change', () => {
+		const selectedFilter = document.querySelectorAll('input[type = "radio"]:checked').value;
+		const filteredProducts = filteredsProducts(product, selectedFilter);
+		renderProducts(filteredProducts);
+	});
 });
+
+function filteredProducts(product, selectedCategory) {
+	return product.filter(item => item.category === selectedCategory);
+}
+
 
 
 
