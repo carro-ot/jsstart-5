@@ -15,45 +15,45 @@ const productList = document.getElementById('productList');
 
 const radioButton = document.querySelectorAll('input[type="radio"]');
 
-productList.innnerHTML = "";
+
+function renderProducts(products) {
+	const productList = document.getElementById('productList'); // Убедись, что ID совпадает
+	productList.innerHTML = '';
 
 
-product.forEach(product => {
-	const li = document.createElement('li');
-	li.innerHTML = `
+	product.forEach(product => {
+		const li = document.createElement('li');
+		li.innerHTML = `
 		<string>${product.name}</string>
 		<p>Price: ${product.price}.rub</p>
 		<p>Category: ${product.category}</p>
 	`;
-	productList.appendChild(li);
-})
-
+		productList.appendChild(li);
+	});
+}
 
 const selectedCategory = document.querySelector('input[type="radio"]:checked').value;
 
-const filteredsProduct = product.filter(product => 
-	product.category === selectedCategory && product.price < maxPrice
-	// const filteredProducts = products.filter(product => product.price < maxPrice);
-// const filteredProducts = products.filter(product => product.price < maxPrice);
-);
-renderProducts(filteredsProduct);
-
-
-
 const radioButtons = document.querySelectorAll('input[type = "radio"]');
-
 radioButtons.forEach(button => {
 	button.addEventListener('change', () => {
-		const selectedFilter = document.querySelectorAll('input[type = "radio"]:checked').value;
-		const filteredProducts = filteredsProducts(product, selectedFilter);
-		renderProducts(filteredProducts);
+		const selectedCategory = document.querySelectorAll('input[type = "radio"]:checked').value;
+		const filteredProducts = filteredsProducts(product, selectedCategory);
+		const maxPrice = 50000;
+
+
+const filteredsProducts = product.filter(product => 
+	product.category === selectedCategory && product.price < maxPrice
+		);
+		
+renderProducts(filteredsProducts);
+
 	});
 });
 
-function filteredProducts(product, selectedCategory) {
-	return product.filter(item => item.category === selectedCategory);
-}
 
+
+  
 
 
 
