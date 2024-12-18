@@ -18,8 +18,8 @@ function renderProducts(filteredProducts) {
 	productList.innerHTML = '';
 
 
-	//создание списка элементов списка и проход по фильтрации товаров 
-	filteredProducts.filteredProducts.forEach(product => {
+ 
+	 filteredProducts.forEach(product => {
 		const li = document.createElement('li');
 		li.innerHTML = `
 			<h3>${product.name}</h3>
@@ -31,51 +31,34 @@ function renderProducts(filteredProducts) {
 }
 
 function filteredProducts() {
-		
+	const selectedCategory = document.querySelectorAll(input[type = "radio"]);
+	const category = selectedCategory ? selectedCategory.value : null;
+	const maxPrice = parseInt(priceRange.value, 10);
 	}
 
+const filteredProducts = product.filter(product => {
+	return (
+		(!category || product.category === category) &&
+		product.price <= maxPrice
+	);
+});
+	
+	renderProducts(filteredProducts);
 
+{
+	radioButtons.forEach(button => {
+		button.addEventListener('change', () => {
+			filteredProducts();
+		});
+	});
+}
 
+priceRange.addEventListener.forEach('input', () => {
+	priceValue.textContent = priceRange.value;
+	filteredProducts();
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+filteredProducts
 
 
 
